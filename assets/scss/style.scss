@@ -34,9 +34,6 @@ body {
     --dark4: #8E97A6;
     --dark6: #E5E8ED;
     --dark7: #ECEEF1;
-    --gray2: #56566D;
-    --gray3: #79798F;
-    --gray4: #A1A1B5;
     --gray5: #372E00;
 }
 
@@ -78,14 +75,6 @@ body {
     color: var(--dark4);
 }
 
-.text-clr-gray3 {
-    color: var(--gray3);
-}
-
-.text-clr-gray4 {
-    color: var(--gray4);
-}
-
 .text-clr-gray5 {
     color: var(--gray5);
 }
@@ -120,11 +109,6 @@ body {
     line-height: 41.6px;
 }
 
-.fs-36 {
-    font-size: 36px;
-    line-height: 46px;
-}
-
 .fs-1 {
     line-height: 58px !important;
 }
@@ -154,19 +138,6 @@ body {
     font-weight: 700;
 }
 
-
-.radius-10 {
-    border-radius: 10px;
-}
-
-.lh-30 {
-    line-height: 30px;
-}
-
-.padding-13 {
-    padding: 13px 20px;
-}
-
 .py-96 {
     padding-block: 96px;
 }
@@ -185,39 +156,6 @@ body {
 
 
 /* helper , base classes  - END*/
-
-// btn
-.primary-btn {
-    border-radius: 100px;
-    background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
-    padding: 22px 32px;
-}
-
-.signup-btn {
-    font-size: 13px;
-    padding: 13px 20px;
-    border-radius: 100px;
-    transition: all 0.3s linear;
-    background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
-}
-
-.nav-wrap {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1728px;
-    width: 100%;
-    z-index: 1000;
-}
-
-.hero {
-    position: relative;
-    background-image: url('../img/hero-bg.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    padding-block: 220px 407px;
-}
 
 h1 {
     font-size: 56px;
@@ -244,6 +182,44 @@ h5 {
     line-height: 30px !important;
 }
 
+// btn
+.primary-btn {
+    border-radius: 100px;
+    background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
+    padding: 22px 32px;
+}
+
+.signup-btn {
+    font-size: 13px;
+    padding: 13px 20px;
+    border-radius: 100px;
+    transition: all 0.3s linear;
+    background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
+}
+
+
+// Header start
+.nav-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1728px;
+    width: 100%;
+    z-index: 1000;
+}
+
+// Header end
+
+// Hero Section start
+.hero {
+    position: relative;
+    background-image: url('../img/hero-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-block: 220px 407px;
+}
+
 .car-choosing {
     .car-table {
         border-radius: 12px;
@@ -266,7 +242,7 @@ h5 {
                     background: rgba(255, 255, 255, 0.90);
                     backdrop-filter: blur(7.5px);
 
-                    h6 {
+                    a {
                         font-size: 9px;
                     }
 
@@ -410,76 +386,78 @@ h5 {
     }
 }
 
+// Hero Section end
 
-// Car slider section start
-h5 {
-    max-width: 700px;
 
-}
-
-.splide {
-    .splide__arrows {
-        button {
-            svg {
-                display: none;
+// Car Slider Section start
+.car-slider {
+    h5 {
+        max-width: 700px;
+    }
+    .splide {
+        .splide__arrows {
+            button {
+                svg {
+                    display: none;
+                }
+            }
+            .splide__arrow {
+                background: #fff;
+                // background-image: linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
+                width: 56px;
+                height: 56px;
+                opacity: 100%;
+            }
+            .splide__arrow--prev {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g opacity="0.65"><path d="M6.52214 10.833H16.668V9.16634H6.52214L11.1888 4.49967L10.0013 3.33301L3.33464 9.99967L10.0013 16.6663L11.1888 15.4997L6.52214 10.833Z" fill="%230A1835"/></g></svg>');
+                background-repeat: no-repeat;
+                background-position: center center;
+                left: -80px;
+            }
+            .splide__arrow--next {
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.4779 10.833H3.33203V9.16634H13.4779L8.8112 4.49967L9.9987 3.33301L16.6654 9.99967L9.9987 16.6663L8.8112 15.4997L13.4779 10.833Z" fill="%230A1835"/></svg>');
+                background-repeat: no-repeat;
+                background-position: center center;
+                right: -80px;
             }
         }
-        .splide__arrow {
-            background: #fff;
-            // background-image: linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
-            width: 56px;
-            height: 56px;
-            opacity: 100%;
+        .splide__pagination {
+            display: none;
         }
-        .splide__arrow--prev {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g opacity="0.65"><path d="M6.52214 10.833H16.668V9.16634H6.52214L11.1888 4.49967L10.0013 3.33301L3.33464 9.99967L10.0013 16.6663L11.1888 15.4997L6.52214 10.833Z" fill="%230A1835"/></g></svg>');
-            background-repeat: no-repeat;
-            background-position: center center;
-            left: -80px;
-        }
-        .splide__arrow--next {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.4779 10.833H3.33203V9.16634H13.4779L8.8112 4.49967L9.9987 3.33301L16.6654 9.99967L9.9987 16.6663L8.8112 15.4997L13.4779 10.833Z" fill="%230A1835"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center center;
-            right: -80px;
-        }
-    }
-    .splide__pagination {
-        display: none;
-    }
-
-    .splide__track {
-        .splide__list {
-            .splide__slide {
-                .car-card {
-                    padding: 24px;
-                    max-height: 462px;
-                    border-radius: 12px;
-                    border: 1px solid transparent;
-                    transition: all 0.3s linear;
-                    background: #fff;
-
-                    .location {
-                        h6 {
-                            font-size: 15px;
-                        }
-                    }
-                    &:hover {
+    
+        .splide__track {
+            .splide__list {
+                .splide__slide {
+                    .car-card {
+                        padding: 24px;
+                        max-height: 462px;
                         border-radius: 12px;
-                        border: 1px solid var(--gradient-gradient_2, #00FFA2);
-
-                        /* hover_card_shadow */
-                        box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
+                        border: 1px solid transparent;
+                        transition: all 0.3s linear;
+                        background: #fff;
+    
+                        .location {
+                            h6 {
+                                font-size: 15px;
+                            }
+                        }
+                        &:hover {
+                            border-radius: 12px;
+                            border: 1px solid var(--gradient-gradient_2, #00FFA2);
+    
+                            /* hover_card_shadow */
+                            box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
+                        }
                     }
                 }
             }
         }
     }
 }
-// Car slider section end
+// Car Slider Section end
 
 
-// Delivery section start
+// Delivery Section start
 .delivery {
     h5 {
         max-width: 680px;
@@ -497,9 +475,9 @@ h5 {
         align-items: flex-start;
     }
 }
-// Delivery section end
+// Delivery Section end
 
-// Spacial discount section start
+// Spacial Discount Section start
 .special-discount {
     .tag {
         padding: 5px 10px;
@@ -510,9 +488,9 @@ h5 {
         display: inline;
     }
 }
-// Spacial discount section end
+// Spacial Discount section end
 
-// Get Approved section start
+// Get Approved Section start
 .get-approved {
     .tag {
         padding: 5px 10px;
@@ -631,5 +609,16 @@ h5 {
 // Footer Section start
 .footer {
     padding-block: 120px 60px;
+    .footer-divider {
+        border-bottom: 1px solid var(--primary);
+        margin-block: 60px;
+    }
+    .copyright {
+        .divider {
+            border-right: 1px solid var(--primary);
+            height: 36px;
+            margin-inline: 24px;
+        }
+    }
 }
 // Footer Section end
