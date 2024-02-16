@@ -159,6 +159,7 @@ body {
 .sub-heading {
     max-width: 700px;
 }
+
 /* helper , base classes  - END*/
 
 h1 {
@@ -192,8 +193,9 @@ h5 {
     background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
     padding: 22px 32px;
     transition: all 0.3s linear;
+
     &:hover {
-    background: var(--gradient-gradient_2, linear-gradient(180deg, #00FFA2 0%, #FFE664 100%));
+        background: var(--gradient-gradient_2, linear-gradient(180deg, #00FFA2 0%, #FFE664 100%));
 
         color: rgb(255, 1, 1);
 
@@ -227,7 +229,6 @@ h5 {
         }
     }
 }
-
 // Header end
 
 // Hero Section start
@@ -290,20 +291,25 @@ h5 {
                         letter-spacing: 0.9px;
                     }
                 }
+
                 input {
                     display: none;
-                    &:checked + label {
+
+                    &:checked+label {
                         border: 1px solid var(--dark1);
+
                         .car1 {
                             display: block !important;
                             margin-top: 14px;
                         }
+
                         .select-btn {
                             display: none;
                         }
                     }
                 }
             }
+
             .options {
                 flex-wrap: wrap;
                 gap: 24px;
@@ -320,6 +326,7 @@ h5 {
                     .form-control:focus {
                         box-shadow: none;
                     }
+
                     .form-select {
                         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" fill="none"><path d="M4 4L0 0H8L4 4Z" fill="%23001B44"/></svg>');
                         background-size: 8px 4px;
@@ -333,6 +340,7 @@ h5 {
                         color: var(--dark1);
                         height: 72px;
                         line-height: normal;
+
                         &:focus {
                             box-shadow: none;
                         }
@@ -366,6 +374,7 @@ h5 {
                 }
 
             }
+
             .toggle-btn {
                 display: flex;
                 align-items: center;
@@ -384,6 +393,7 @@ h5 {
                     display: inline-block;
                     width: 65px;
                     height: 36px;
+
                     input {
                         opacity: 0;
                         width: 0;
@@ -428,6 +438,7 @@ h5 {
                     border-radius: 50%;
                 }
             }
+
             .search {
                 padding: 22px 0;
                 border-radius: 100px;
@@ -526,7 +537,6 @@ h5 {
         align-items: flex-start;
     }
 }
-
 // Delivery Section end
 
 // Spacial Discount & Get Approved Section start
@@ -554,6 +564,7 @@ h5 {
     h2 {
         max-width: 670px;
         text-wrap: balance;
+
         span {
             background: linear-gradient(90deg, #FF3363 17.31%, #FFE464 30.97%, #FFE664 30.97%, #F8E766 30.97%, #00FFA2 45.19%);
             background-clip: text;
@@ -562,7 +573,6 @@ h5 {
         }
     }
 }
-
 // Program Offer Section end
 
 // Customize Section start
@@ -580,7 +590,6 @@ h5 {
         }
     }
 }
-
 // Customize Section end
 
 
@@ -599,7 +608,6 @@ h5 {
         }
     }
 }
-
 // Ride Upgrades section end
 
 // Joining Section start
@@ -609,7 +617,6 @@ h5 {
         border-left: 1px solid #0A1835;
     }
 }
-
 // Joining Section end
 
 // Personalized Section start
@@ -623,7 +630,6 @@ h5 {
         }
     }
 }
-
 // Personalized Section end
 
 // Guide Section start
@@ -664,24 +670,30 @@ h5 {
 // Footer Section start
 footer {
     padding-block: 120px 60px;
+
     a {
         transition: 0.2s linear;
+
         &:hover {
             color: #fff;
         }
+
         svg {
-            &:hover *{
+            &:hover * {
                 fill: #fff;
             }
         }
     }
+
     ul {
         margin: 0;
         padding: 0;
+
         li {
             list-style: none;
         }
     }
+
     .footer-divider {
         border-bottom: 1px solid var(--primary);
         margin-block: 60px;
@@ -695,5 +707,4 @@ footer {
         }
     }
 }
-
 // Footer Section end
