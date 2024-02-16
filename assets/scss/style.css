@@ -142,6 +142,10 @@ body {
   padding: 32px 25px;
 }
 
+.sub-heading {
+  max-width: 700px;
+}
+
 /* helper , base classes  - END*/
 h1 {
   font-size: 56px;
@@ -171,6 +175,14 @@ h5 {
   border-radius: 100px;
   background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
   padding: 22px 32px;
+  transition: all 0.3s linear;
+}
+.primary-btn:hover {
+  background: var(--gradient-gradient_2, linear-gradient(180deg, #00FFA2 0%, #FFE664 100%));
+  color: rgb(255, 1, 1);
+}
+.primary-btn:hover svg * {
+  fill: rgb(255, 1, 1);
 }
 
 .signup-btn {
@@ -189,6 +201,9 @@ h5 {
   width: 100%;
   z-index: 1000;
 }
+.nav-wrap .dropdown-toggle::after {
+  margin-left: 12px;
+}
 
 .hero {
   position: relative;
@@ -198,51 +213,109 @@ h5 {
   background-size: cover;
   padding-block: 220px 407px;
 }
+.hero .live-chat {
+  position: absolute;
+  padding: 14px;
+  border-radius: 50%;
+  background: #FF3363;
+  bottom: 30px;
+  right: 30px;
+}
 
-.car-choosing .car-table {
+.car-choosing form {
   border-radius: 12px;
   border: 1px solid var(--gradient-gradient_2, #00FFA2);
   background: var(--primary-white, #FFF);
   box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
 }
-.car-choosing .car-table .content .car-models {
+.car-choosing form .content {
   display: flex;
   flex-wrap: wrap;
   gap: 11px;
   justify-content: space-between;
 }
-.car-choosing .car-table .content .car-models .car {
+.car-choosing form .content .cars label {
   position: relative;
-  padding: 45px 70px;
   border-radius: 12px;
   border: 1px solid var(--dark-dark_5, #B7BCC3);
   background: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(7.5px);
-          backdrop-filter: blur(7.5px);
+  cursor: pointer;
+  width: 203px;
+  min-height: 105px;
+  transition: all 0.3s linear;
 }
-.car-choosing .car-table .content .car-models .car a {
+.car-choosing form .content .cars label .select-btn {
   font-size: 9px;
+  border: none;
+  background: none;
 }
-.car-choosing .car-table .content .car-models .car .tag {
+.car-choosing form .content .cars label .tag {
   position: absolute;
   top: 12px;
   left: 12px;
   background-color: #FFE664;
   padding: 4px 8px;
   border-radius: 100px;
-}
-.car-choosing .car-table .content .car-models .car .tag p {
   font-size: 10px;
   letter-spacing: 0.9px;
 }
-.car-choosing .car-table .content .options {
+.car-choosing form .content .cars input {
+  display: none;
+}
+.car-choosing form .content .cars input:checked + label {
+  border: 1px solid var(--dark1);
+}
+.car-choosing form .content .cars input:checked + label .car1 {
+  display: block !important;
+  margin-top: 14px;
+}
+.car-choosing form .content .cars input:checked + label .select-btn {
+  display: none;
+}
+.car-choosing form .content .options {
   flex-wrap: wrap;
+  gap: 24px;
 }
-.car-choosing .car-table .content .options .dropdown {
-  margin-top: 32px;
+.car-choosing form .content .options .form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
+  opacity: 100;
+  transform: none;
 }
-.car-choosing .car-table .content .options .dropdown .menu-btn {
-  padding: 12px 24px 15px 24px;
+.car-choosing form .content .options .form-floating > .form-control-plaintext ~ label,
+.car-choosing form .content .options .form-floating > .form-control:focus ~ label,
+.car-choosing form .content .options .form-floating > .form-control:not(:placeholder-shown) ~ label,
+.car-choosing form .content .options .form-floating > .form-select ~ label {
+  opacity: 100;
+  transform: none;
+}
+.car-choosing form .content .options .form-floating .form-control:focus {
+  box-shadow: none;
+}
+.car-choosing form .content .options .form-floating .form-select {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" fill="none"><path d="M4 4L0 0H8L4 4Z" fill="%23001B44"/></svg>');
+  background-size: 8px 4px;
+  background-position: 265px 45px;
+  padding: 34px 24px 15px 24px;
+  min-width: 304px;
+  border: 1px solid var(--dark4);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark1);
+  height: 72px;
+  line-height: normal;
+}
+.car-choosing form .content .options .form-floating .form-select:focus {
+  box-shadow: none;
+}
+.car-choosing form .content .options .form-floating label {
+  color: var(--dark4);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 12px 24px;
+}
+.car-choosing form .content .options .form-floating .form-control {
+  min-height: 72px;
+  padding: 34px 24px 15px 24px;
   min-width: 304px;
   border: 1px solid var(--dark4);
   border-radius: 12px;
@@ -250,52 +323,32 @@ h5 {
   font-weight: 500;
   color: var(--dark1);
 }
-.car-choosing .car-table .content .options .dropdown .menu-btn::after {
-  position: absolute;
-  right: 30px;
-  bottom: 22px;
+.car-choosing form .content .options .form-floating label {
+  padding: 12px 24px;
 }
-.car-choosing .car-table .content .options .dropdown span {
-  font-size: 10px;
-  padding-bottom: 9px;
-}
-.car-choosing .car-table .content .options .down-payment {
-  margin-top: 32px;
-  padding: 12px 24px 15px 24px;
-  min-width: 304px;
-  border: 1px solid var(--dark4);
-  border-radius: 12px;
-}
-.car-choosing .car-table .content .options .down-payment input {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--dark1);
-}
-.car-choosing .car-table .content .options h6 {
-  font-size: 10px;
-}
-.car-choosing .car-table .content .toggle-btn {
+.car-choosing form .content .toggle-btn {
   display: flex;
   align-items: center;
-  margin-block: 32px;
+  margin-top: 8px;
+  margin-bottom: 32px;
   gap: 12px;
 }
-.car-choosing .car-table .content .toggle-btn h6 {
+.car-choosing form .content .toggle-btn h6 {
   color: #848B9A;
   font-size: 17px;
 }
-.car-choosing .car-table .content .toggle-btn .switch {
+.car-choosing form .content .toggle-btn .switch {
   position: relative;
   display: inline-block;
   width: 65px;
   height: 36px;
 }
-.car-choosing .car-table .content .toggle-btn .switch input {
+.car-choosing form .content .toggle-btn .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-.car-choosing .car-table .content .toggle-btn .slider {
+.car-choosing form .content .toggle-btn .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -304,7 +357,7 @@ h5 {
   bottom: 0;
   border: 1px solid #848B9A;
 }
-.car-choosing .car-table .content .toggle-btn .slider:before {
+.car-choosing form .content .toggle-btn .slider:before {
   position: absolute;
   content: "";
   height: 22px;
@@ -314,27 +367,21 @@ h5 {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="11" fill="%23848B9A"/><path d="M7 7L15 15" stroke="white"/><path d="M7 7L15 15" stroke="white"/><path d="M7 7L15 15" stroke="white"/><path d="M15 7L7 15" stroke="white"/></svg>');
   transition: 0.4s;
 }
-.car-choosing .car-table .content .toggle-btn input:checked + .slider {
-  border: 1px solid #848B9A;
-}
-.car-choosing .car-table .content .toggle-btn input:checked + .slider:before {
+.car-choosing form .content .toggle-btn input:checked + .slider:before {
   transform: translateX(28px);
 }
-.car-choosing .car-table .content .toggle-btn .slider.round {
+.car-choosing form .content .toggle-btn .slider.round {
   border-radius: 100px;
 }
-.car-choosing .car-table .content .toggle-btn .slider.round:before {
+.car-choosing form .content .toggle-btn .slider.round:before {
   border-radius: 50%;
 }
-.car-choosing .car-table .content .search {
+.car-choosing form .content .search {
   padding: 22px 0;
   border-radius: 100px;
   background: linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
 }
 
-.car-slider h5 {
-  max-width: 700px;
-}
 .car-slider .splide .splide__arrows button svg {
   display: none;
 }
@@ -377,9 +424,6 @@ h5 {
   box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
 }
 
-.delivery h5 {
-  max-width: 680px;
-}
 .delivery h5 span {
   background: linear-gradient(90deg, #FF3363 57.9%, #FFE464 76.87%, #FFE664 76.88%, #F8E766 76.88%, #00FFA2 96.62%);
   background-clip: text;
@@ -393,15 +437,7 @@ h5 {
   align-items: flex-start;
 }
 
-.special-discount .tag {
-  padding: 5px 10px;
-  font-size: 12px;
-  letter-spacing: 1.08px;
-  border-radius: 100px;
-  background-color: var(--dark7);
-  display: inline;
-}
-
+.special-discount .tag,
 .get-approved .tag {
   padding: 5px 10px;
   font-size: 12px;
@@ -469,6 +505,7 @@ h5 {
   border-radius: 12px;
   overflow: hidden;
   transition: 0.2s linear;
+  cursor: pointer;
 }
 .guide .guide-card .text {
   padding: 24px;
@@ -488,14 +525,30 @@ h5 {
   box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
 }
 
-.footer {
+footer {
   padding-block: 120px 60px;
 }
-.footer .footer-divider {
+footer a {
+  transition: 0.2s linear;
+}
+footer a:hover {
+  color: #fff;
+}
+footer a svg:hover * {
+  fill: #fff;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  list-style: none;
+}
+footer .footer-divider {
   border-bottom: 1px solid var(--primary);
   margin-block: 60px;
 }
-.footer .copyright .divider {
+footer .copyright .divider {
   border-right: 1px solid var(--primary);
   height: 36px;
   margin-inline: 24px;

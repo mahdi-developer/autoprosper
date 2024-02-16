@@ -71,6 +71,7 @@ body {
 .text-clr-dark6 {
     color: var(--dark6);
 }
+
 .text-clr-dark4 {
     color: var(--dark4);
 }
@@ -84,6 +85,7 @@ body {
 .bg-clr-dark1 {
     background-color: var(--dark1);
 }
+
 .bg-clr-dark7 {
     background-color: var(--dark7);
 }
@@ -154,7 +156,9 @@ body {
     padding: 32px 25px;
 }
 
-
+.sub-heading {
+    max-width: 700px;
+}
 /* helper , base classes  - END*/
 
 h1 {
@@ -187,6 +191,16 @@ h5 {
     border-radius: 100px;
     background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
     padding: 22px 32px;
+    transition: all 0.3s linear;
+    &:hover {
+    background: var(--gradient-gradient_2, linear-gradient(180deg, #00FFA2 0%, #FFE664 100%));
+
+        color: rgb(255, 1, 1);
+
+        svg * {
+            fill: rgb(255, 1, 1);
+        }
+    }
 }
 
 .signup-btn {
@@ -206,6 +220,12 @@ h5 {
     max-width: 1728px;
     width: 100%;
     z-index: 1000;
+
+    .dropdown-toggle {
+        &::after {
+            margin-left: 12px;
+        }
+    }
 }
 
 // Header end
@@ -218,32 +238,45 @@ h5 {
     background-position: center center;
     background-size: cover;
     padding-block: 220px 407px;
+
+    .live-chat {
+        position: absolute;
+        padding: 14px;
+        border-radius: 50%;
+        background: #FF3363;
+        bottom: 30px;
+        right: 30px;
+    }
 }
 
 .car-choosing {
-    .car-table {
+    form {
         border-radius: 12px;
         border: 1px solid var(--gradient-gradient_2, #00FFA2);
         background: var(--primary-white, #FFF);
         box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
 
         .content {
-            .car-models {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 11px;
-                justify-content: space-between;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 11px;
+            justify-content: space-between;
 
-                .car {
+            .cars {
+                label {
                     position: relative;
-                    padding: 45px 70px;
                     border-radius: 12px;
                     border: 1px solid var(--dark-dark_5, #B7BCC3);
                     background: rgba(255, 255, 255, 0.90);
-                    backdrop-filter: blur(7.5px);
+                    cursor: pointer;
+                    width: 203px;
+                    min-height: 105px;
+                    transition: all 0.3s linear;
 
-                    a {
+                    .select-btn {
                         font-size: 9px;
+                        border: none;
+                        background: none;
                     }
 
                     .tag {
@@ -253,66 +286,91 @@ h5 {
                         background-color: #FFE664;
                         padding: 4px 8px;
                         border-radius: 100px;
-
-                        p {
-                            font-size: 10px;
-                            letter-spacing: 0.9px;
+                        font-size: 10px;
+                        letter-spacing: 0.9px;
+                    }
+                }
+                input {
+                    display: none;
+                    &:checked + label {
+                        border: 1px solid var(--dark1);
+                        .car1 {
+                            display: block !important;
+                            margin-top: 14px;
+                        }
+                        .select-btn {
+                            display: none;
                         }
                     }
                 }
             }
-
             .options {
                 flex-wrap: wrap;
+                gap: 24px;
 
-                .dropdown {
-                    margin-top: 32px;
+                .form-floating>.form-control-plaintext~label,
+                .form-floating>.form-control:focus~label,
+                .form-floating>.form-control:not(:placeholder-shown)~label,
+                .form-floating>.form-select~label {
+                    opacity: 100;
+                    transform: none;
+                }
 
-                    .menu-btn {
-                        padding: 12px 24px 15px 24px;
+                .form-floating {
+                    .form-control:focus {
+                        box-shadow: none;
+                    }
+                    .form-select {
+                        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="4" viewBox="0 0 8 4" fill="none"><path d="M4 4L0 0H8L4 4Z" fill="%23001B44"/></svg>');
+                        background-size: 8px 4px;
+                        background-position: 265px 45px;
+                        padding: 34px 24px 15px 24px;
                         min-width: 304px;
                         border: 1px solid var(--dark4);
                         border-radius: 12px;
                         font-size: 18px;
                         font-weight: 500;
                         color: var(--dark1);
-                        &::after {
-                            position: absolute;
-                            right: 30px;
-                            bottom: 22px;
+                        height: 72px;
+                        line-height: normal;
+                        &:focus {
+                            box-shadow: none;
                         }
                     }
 
-                    span {
+                    label {
+                        color: var(--dark4);
+                        font-weight: 700;
                         font-size: 10px;
-                        padding-bottom: 9px;
+                        padding: 12px 24px;
+
                     }
                 }
 
-                .down-payment {
-                    margin-top: 32px;
-                    padding: 12px 24px 15px 24px;
-                    min-width: 304px;
-                    border: 1px solid var(--dark4);
-
-                    border-radius: 12px;
-
-                    input {
+                .form-floating {
+                    .form-control {
+                        min-height: 72px;
+                        padding: 34px 24px 15px 24px;
+                        min-width: 304px;
+                        border: 1px solid var(--dark4);
+                        border-radius: 12px;
                         font-size: 18px;
                         font-weight: 500;
                         color: var(--dark1);
                     }
+
+                    label {
+                        padding: 12px 24px;
+
+                    }
                 }
 
-                h6 {
-                    font-size: 10px;
-                }
             }
-
             .toggle-btn {
                 display: flex;
                 align-items: center;
-                margin-block: 32px;
+                margin-top: 8px;
+                margin-bottom: 32px;
                 gap: 12px;
 
                 h6 {
@@ -326,12 +384,11 @@ h5 {
                     display: inline-block;
                     width: 65px;
                     height: 36px;
-                }
-
-                .switch input {
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                    }
                 }
 
                 .slider {
@@ -356,10 +413,6 @@ h5 {
                     transition: 0.4s;
                 }
 
-                input:checked+.slider {
-                    border: 1px solid #848B9A;
-                }
-
 
                 input:checked+.slider:before {
                     -webkit-transform: translateX(26px);
@@ -375,25 +428,19 @@ h5 {
                     border-radius: 50%;
                 }
             }
-
             .search {
                 padding: 22px 0;
                 border-radius: 100px;
                 background: linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
             }
         }
-
     }
 }
-
 // Hero Section end
 
 
 // Car Slider Section start
 .car-slider {
-    h5 {
-        max-width: 700px;
-    }
     .splide {
         .splide__arrows {
             button {
@@ -401,6 +448,7 @@ h5 {
                     display: none;
                 }
             }
+
             .splide__arrow {
                 background: #fff;
                 // background-image: linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
@@ -408,12 +456,14 @@ h5 {
                 height: 56px;
                 opacity: 100%;
             }
+
             .splide__arrow--prev {
                 background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g opacity="0.65"><path d="M6.52214 10.833H16.668V9.16634H6.52214L11.1888 4.49967L10.0013 3.33301L3.33464 9.99967L10.0013 16.6663L11.1888 15.4997L6.52214 10.833Z" fill="%230A1835"/></g></svg>');
                 background-repeat: no-repeat;
                 background-position: center center;
                 left: -80px;
             }
+
             .splide__arrow--next {
                 background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13.4779 10.833H3.33203V9.16634H13.4779L8.8112 4.49967L9.9987 3.33301L16.6654 9.99967L9.9987 16.6663L8.8112 15.4997L13.4779 10.833Z" fill="%230A1835"/></svg>');
                 background-repeat: no-repeat;
@@ -421,10 +471,11 @@ h5 {
                 right: -80px;
             }
         }
+
         .splide__pagination {
             display: none;
         }
-    
+
         .splide__track {
             .splide__list {
                 .splide__slide {
@@ -435,16 +486,17 @@ h5 {
                         border: 1px solid transparent;
                         transition: all 0.3s linear;
                         background: #fff;
-    
+
                         .location {
                             h6 {
                                 font-size: 15px;
                             }
                         }
+
                         &:hover {
                             border-radius: 12px;
                             border: 1px solid var(--gradient-gradient_2, #00FFA2);
-    
+
                             /* hover_card_shadow */
                             box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
                         }
@@ -456,11 +508,9 @@ h5 {
 }
 // Car Slider Section end
 
-
 // Delivery Section start
 .delivery {
     h5 {
-        max-width: 680px;
         span {
             background: linear-gradient(90deg, #FF3363 57.9%, #FFE464 76.87%, #FFE664 76.88%, #F8E766 76.88%, #00FFA2 96.62%);
             background-clip: text;
@@ -469,28 +519,18 @@ h5 {
             font-weight: 700;
         }
     }
+
     .happy-clients {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
     }
 }
+
 // Delivery Section end
 
-// Spacial Discount Section start
-.special-discount {
-    .tag {
-        padding: 5px 10px;
-        font-size: 12px;
-        letter-spacing: 1.08px;
-        border-radius: 100px;
-        background-color: var(--dark7);
-        display: inline;
-    }
-}
-// Spacial Discount section end
-
-// Get Approved Section start
+// Spacial Discount & Get Approved Section start
+.special-discount,
 .get-approved {
     .tag {
         padding: 5px 10px;
@@ -501,7 +541,7 @@ h5 {
         display: inline;
     }
 }
-// Get Approved section end
+// Spacial Discount & Get Approved section end
 
 // Program Offer Section start
 .program-offer {
@@ -522,6 +562,7 @@ h5 {
         }
     }
 }
+
 // Program Offer Section end
 
 // Customize Section start
@@ -532,12 +573,14 @@ h5 {
             border: 1px solid#00FFA2;
             background: #FFF;
             box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
+
             .content {
                 padding: 32px;
             }
         }
     }
 }
+
 // Customize Section end
 
 
@@ -545,6 +588,7 @@ h5 {
 .ride-upgrades {
     .content {
         padding-inline: 32px;
+
         .tag {
             padding: 5px 10px;
             font-size: 12px;
@@ -555,6 +599,7 @@ h5 {
         }
     }
 }
+
 // Ride Upgrades section end
 
 // Joining Section start
@@ -564,11 +609,13 @@ h5 {
         border-left: 1px solid #0A1835;
     }
 }
+
 // Joining Section end
 
 // Personalized Section start
 .personalized {
-    background:  linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
+    background: linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
+
     .content {
         .personalized-card {
             padding: 24px;
@@ -576,6 +623,7 @@ h5 {
         }
     }
 }
+
 // Personalized Section end
 
 // Guide Section start
@@ -585,34 +633,60 @@ h5 {
         border-radius: 12px;
         overflow: hidden;
         transition: 0.2s linear;
+        cursor: pointer;
+
         .text {
             padding: 24px;
             text-align: start;
+
             h6 {
                 padding-bottom: 109px;
             }
+
             a {
                 transition: 0.3s linear;
+
                 &:hover {
                     color: var(--dark1);
                 }
             }
         }
+
         &:hover {
             border: 2px solid #00FFA2;
             box-shadow: 0px 36px 72px -18px rgba(0, 27, 68, 0.25);
         }
     }
 }
+
 // Guide Section end
 
 // Footer Section start
-.footer {
+footer {
     padding-block: 120px 60px;
+    a {
+        transition: 0.2s linear;
+        &:hover {
+            color: #fff;
+        }
+        svg {
+            &:hover *{
+                fill: #fff;
+            }
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
     .footer-divider {
         border-bottom: 1px solid var(--primary);
         margin-block: 60px;
     }
+
     .copyright {
         .divider {
             border-right: 1px solid var(--primary);
@@ -621,4 +695,5 @@ h5 {
         }
     }
 }
+
 // Footer Section end
