@@ -939,26 +939,38 @@ footer {
         border-bottom: 1px solid var(--dark5);
     }
 
-    .date {
-        padding-bottom: 27px;
-
-        .week {
-            border-inline: 1px solid var(--dark5);
-            padding-inline: 19px;
-        }
-    }
-
-    .upcoming {
-        gap: 20px;
-
-        .check-event {
-            &:hover {
-                svg * {
-                    transition: all 0.2s linear;
-                    fill: var(--dark1);
-                }
+    .date-slider {
+        .date {
+            padding-bottom: 27px;
+    
+            .week {
+                border-inline: 1px solid var(--dark5);
+                padding-inline: 19px;
             }
-
+        }
+    
+        .upcoming {
+            gap: 20px;
+    
+            
+        }
+        .splide__arrows {
+            .splide__arrow  {
+            padding-top: 90px;
+            background: none;
+            }
+            .check-event {
+                &:hover {
+                    svg * {
+                        transition: all 0.2s linear;
+                        fill: var(--dark1);
+                    }
+                }
+    
+            }
+        }
+        .splide__pagination {
+            display: none;
         }
     }
 }
@@ -1366,4 +1378,9 @@ footer {
             }
         }
     }
+}
+
+#myDiv {
+    margin: 0;
+    padding: 0;
 }

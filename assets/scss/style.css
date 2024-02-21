@@ -764,19 +764,26 @@ footer .copyright .divider {
 .appointments .divider {
   border-bottom: 1px solid var(--dark5);
 }
-.appointments .date {
+.appointments .date-slider .date {
   padding-bottom: 27px;
 }
-.appointments .date .week {
+.appointments .date-slider .date .week {
   border-inline: 1px solid var(--dark5);
   padding-inline: 19px;
 }
-.appointments .upcoming {
+.appointments .date-slider .upcoming {
   gap: 20px;
 }
-.appointments .upcoming .check-event:hover svg * {
+.appointments .date-slider .splide__arrows .splide__arrow {
+  padding-top: 90px;
+  background: none;
+}
+.appointments .date-slider .splide__arrows .check-event:hover svg * {
   transition: all 0.2s linear;
   fill: var(--dark1);
+}
+.appointments .date-slider .splide__pagination {
+  display: none;
 }
 
 .mail-sms {
@@ -1108,4 +1115,9 @@ footer .copyright .divider {
   color: #fff;
   background-color: var(--dark1);
   border: 1px solid var(--dark1);
+}
+
+#myDiv {
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=style.css.map */
