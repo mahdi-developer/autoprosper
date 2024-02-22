@@ -267,16 +267,6 @@ button {
     margin-bottom: 1px;
 }
 
-.height-300 {
-    max-height: 300px;
-    height: 100%;
-}
-
-.height-105 {
-    max-height: 105px;
-    height: 100%;
-}
-
 .sub-heading {
     max-width: 700px;
 }
@@ -370,18 +360,12 @@ h5 {
     color: var(--dark1);
     background: var(--gradient-gradient_2, linear-gradient(90deg, #00FFA2 0%, #FFE664 100%));
     border-radius: 100px;
-    border: 2px solid transparent;
     padding: 10px 20px;
     gap: 6px;
-    transition: all 0.3s linear;
+    transition: all 0.2s ease-in-out;
     &:hover {
         color: var(--dark1);
-        background: none;
-        border: 1px solid;
-        border-image-slice: 1;
-        border-width: 2px;
-        border-image-source:  linear-gradient(90deg, #00FFA2 0%, #FFE664 100%);
-        transition: all 0.2s linear;
+        background:  linear-gradient(90deg, #FFE664 0%, #00FFA2 100%);
     }
 }
 
@@ -923,7 +907,7 @@ footer {
 
 // Appointments Section start
 .appointments {
-    padding: 24px 16px 30px 16px;
+    padding: 34px 16px;
 
     .status {
         padding: 4px 8px;
@@ -948,16 +932,13 @@ footer {
                 padding-inline: 19px;
             }
         }
-    
-        .upcoming {
-            gap: 20px;
-    
-            
-        }
         .splide__arrows {
             .splide__arrow  {
-            padding-top: 90px;
+            padding-top: 70px;
             background: none;
+            svg {
+                height: 12px;
+            }
             }
             .check-event {
                 &:hover {
@@ -966,7 +947,6 @@ footer {
                         fill: var(--dark1);
                     }
                 }
-    
             }
         }
         .splide__pagination {
@@ -977,8 +957,8 @@ footer {
 
 .mail-sms {
     margin-top: 12px;
-    padding-block: 24px 0px;
-    padding-bottom: 28px;
+    padding-block: 34px 0px;
+    padding-bottom: 30px;
     .notification-bars {
         padding-top: 16px;
         transition: all 0.3s linear;
@@ -1059,7 +1039,7 @@ footer {
     margin-top: 12px;
 
     .robot {
-        padding: 88px 0 110px 0;
+        padding: 122px 0 122px 0;
 
         .img {
             h6 {
@@ -1286,25 +1266,18 @@ footer {
 }
 
 .tracking {
-    margin-block: 12px;
+    margin-block: 10px;
     padding-block: 24px;
-
     .divider {
         border-bottom: 1px solid var(--dark5);
     }
-
-    .status {
-        margin-left: 8px;
-        border-left: 1px dashed var(--dark1);
-
-
-
-        .status-direction {}
-
+    .status-wrapper {
+        background-image: url('data:image/svg+xml,<svg width="1" height="275" viewBox="0 0 1 275" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.5" y1="2.18557e-08" x2="0.499988" y2="275" stroke="%238E97A6" stroke-dasharray="5 5"/></svg>');
+        background-repeat: no-repeat;
+        background-position: top 9px left 0;
         .content {
             margin-left: 16px;
             position: relative;
-
             &::after {
                 position: absolute;
                 content: '';
@@ -1312,8 +1285,8 @@ footer {
                 background-repeat: no-repeat;
                 height: 16px;
                 width: 16px;
-                top: 0;
-                left: -25px;
+                top: 2px;
+                left: -23px;
             }
         }
 
@@ -1328,13 +1301,47 @@ footer {
                 height: 16px;
                 width: 16px;
                 top: 0;
-                left: -25px;
+                left: -23px;
+            }
+        }
+    }
+    .status-wrapper2 {
+        background-image: url('data:image/svg+xml,<svg width="1" height="94" viewBox="0 0 1 94" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="0.5" y1="2.18557e-08" x2="0.499996" y2="94" stroke="%238E97A6" stroke-dasharray="5 5"/></svg>');
+        background-repeat: no-repeat;
+        background-position: top 9px left 0;
+        .content {
+            margin-left: 16px;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="%23E5E8ED"/><circle cx="8.00033" cy="8.00001" r="5.33333" fill="white"/></svg>');
+                background-repeat: no-repeat;
+                height: 16px;
+                width: 16px;
+                top: 2px;
+                left: -23px;
+            }
+        }
+
+        .active {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="%23001B44"/><circle cx="8.00033" cy="8" r="5.33333" fill="white"/></svg>');
+                background-repeat: no-repeat;
+                height: 16px;
+                width: 16px;
+                top: 0;
+                left: -23px;
             }
         }
     }
 
     .refresh-task-btn {
-        margin-top: 12px;
+        margin-top: 12px !important;
     }
 }
 
@@ -1378,9 +1385,4 @@ footer {
             }
         }
     }
-}
-
-#myDiv {
-    margin: 0;
-    padding: 0;
 }
